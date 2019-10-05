@@ -1,9 +1,11 @@
-# Tic-tac-toe-game-source-code
-This game is created by Sanjeev Kumar
+
 #1. Print a 3*3 board
+
 from IPython.display import clear_output
 def display_board(board):
-    clear_output() # This will only work in jupyter notebook
+    clear_output() 
+    
+    #This will only work in jupyter notebook
     
     print('   |   |')
     print(' '+ board[7]+ ' | ' + board[8]+ ' | ' + board[9])
@@ -16,7 +18,8 @@ def display_board(board):
     
 
 
-#step2 Function to take input from user up to x or o'''
+#step2 Function to take input from user up to x or o'
+
 def player_input():
     marker = ''
     while not(marker == 'X' or marker == 'O'):
@@ -27,12 +30,14 @@ def player_input():
             return ('O','X')
 
 #step3: run the palce_maker fuction using test parameters and display the modified board
+
 def place_marker(board, marker, position):
     board[position]= marker
     
 
 
 #Step4.Check if someone has won the game
+
 def win_check(board,mark):
     return((board[7]== mark and board[8] == mark and board[9] == mark) or #Check for upper row
            (board[4]== mark and board[5]== mark and board[6]== mark) or #Check for middle row
@@ -44,6 +49,7 @@ def win_check(board,mark):
            (board[1]== mark and board[5]== mark and board[9] == mark))
 
 #step 5. A fucntion to choose randomly which player goes first
+
 import random
 def choose_first():
     if random.randint(0,1) == 0:
@@ -52,10 +58,13 @@ def choose_first():
         return 'Player1'
     
 #step6: A function which Check if there is a blank space return boolean
+
 def space_check(board, position):
     return board[position]== ' '
 
 #Step 7. A fuction that checks if board is already full and return boolean True for full else False
+
+
 def full_board_check(board):
     for i in range(1,10):
         if space_check(board,i):
@@ -63,7 +72,9 @@ def full_board_check(board):
     return True
 
 #step 8. A fucntion that asks for player next position between (1-9) and then use the funtion form step6 to check if free posi.
-#then return the function for later use'''
+#then return the function for later use
+
+
 def player_choice(board):
     position = 0
     while position not in [1,2,3,4,5,6,7,8,9] or not space_check(board,position):
@@ -73,10 +84,12 @@ def player_choice(board):
 
 
 #step9 asks for replays
+
 def re_plays():
     return input("Do you want to paly agian answer in yes /or no: ").lower().startswith('y')
 
 #step10: Functions and loops to run the game
+
 print("Welcome to TIC TAC TOE!!!")
 while True:
     #Reset the board
