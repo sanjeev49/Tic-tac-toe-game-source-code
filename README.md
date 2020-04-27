@@ -5,16 +5,16 @@ from IPython.display import clear_output
 def display_board(board):
     clear_output() 
     
-    #This will only work in jupyter notebook
+   This will only work in jupyter notebook
     
-    print('   |   |')
-    print(' '+ board[7]+ ' | ' + board[8]+ ' | ' + board[9])
-    print('--------------')
-    print('   |   |')
-    print(' '+board[4]+' | '+board[5]+' | '+board[6])
-    print('--------------')
-    print(' '+board[1]+' | '+ board[2]+' | '+board[3])
-    print('   |   |')
+   print('   |   |')
+   print(' '+ board[7]+ ' | ' + board[8]+ ' | ' + board[9])
+   print('--------------')
+   print('   |   |')
+   print(' '+board[4]+' | '+board[5]+' | '+board[6])
+   print('--------------')
+   print(' '+board[1]+' | '+ board[2]+' | '+board[3])
+   print('   |   |')
     
 
 
@@ -99,29 +99,29 @@ while True:
     print(turn + ' will go first. ')
     
     
-    play_game = input("Are you ready to play? Enter Yes or No. ")
+   play_game = input("Are you ready to play? Enter Yes or No. ")
     
-    if play_game.lower()[0] == 'y':
+   if play_game.lower()[0] == 'y':
         game_on = True
     else:
         game_on = False
         
         
-    while game_on:
+   while game_on:
         if turn == 'Player1':
             #Player1, turn
             
             
-            display_board(theboard)
-            position = player_choice(theboard)
-            place_marker(theboard ,player1_marker, position)
+   display_board(theboard)
+        position = player_choice(theboard)
+        place_marker(theboard ,player1_marker, position)
             
             
-            if win_check(theboard, player1_marker):
-                display_board(theboard)
-                print("Congratulations! Player1 has  won the game")
+   if win_check(theboard, player1_marker):
+        display_board(theboard)
+        print("Congratulations! Player1 has  won the game")
             
-                game_on = False
+   game_on = False
             else:
                 if full_board_check(theboard):
                     display_board(theboard)
